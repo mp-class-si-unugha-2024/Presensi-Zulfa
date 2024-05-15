@@ -49,7 +49,7 @@ class SignupView extends GetView<SignupController> {
                 SizedBox(height: 15),
                 TextFormField(
                   decoration: InputDecoration(
-                    labelText: "Pilih Prodi",
+                    labelText: "Pilih prodi",
                     border: OutlineInputBorder(),
                   ),
                 ),
