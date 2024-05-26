@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-
 import 'package:get/get.dart';
+import 'package:presensi/app/routes/app_pages.dart';
 
 import '../controllers/signin_controller.dart';
 
@@ -76,6 +75,7 @@ class SigninView extends GetView<SigninController> {
                     Text("Lupa kata sandi"),
                     ElevatedButton(
                       onPressed: () {
+                        Get.toNamed(Routes.HOME);
                         if (formkey.currentState!.validate()) {}
                       },
                       child: Text("Masuk"),

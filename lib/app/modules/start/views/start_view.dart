@@ -22,7 +22,7 @@ class StartView extends GetView<StartController> {
               ),
             ),
             const SizedBox(height: 15),
-            const Text("Selamat datang di aplkasi presensi"),
+            const Text("Selamat datang di aplikasi presensi"),
             const Text("Masuk atau daftar jika belum memiliki akun"),
             const SizedBox(height: 15),
             SizedBox(
