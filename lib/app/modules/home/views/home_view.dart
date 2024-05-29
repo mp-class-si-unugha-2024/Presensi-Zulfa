@@ -64,6 +64,7 @@ class HomeView extends GetView<HomeController> {
                           borderRadius: BorderRadius.circular(15),
                         ),
                         child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             Column(
                               children: [
@@ -77,7 +78,12 @@ class HomeView extends GetView<HomeController> {
                               ],
                             ),
                             SizedBox(
-                              width: 150,
+                              height: 30,
+                              child: VerticalDivider(
+                                width: 20,
+                                thickness: 2,
+                                color: Colors.black,
+                              ),
                             ),
                             Column(
                               children: [
@@ -100,6 +106,7 @@ class HomeView extends GetView<HomeController> {
                   height: 15,
                 ),
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Container(
                       padding: EdgeInsets.all(15),
@@ -121,9 +128,6 @@ class HomeView extends GetView<HomeController> {
                           ),
                         ],
                       ),
-                    ),
-                    SizedBox(
-                      width: 90,
                     ),
                     Container(
                       padding: EdgeInsets.all(15),
@@ -149,14 +153,21 @@ class HomeView extends GetView<HomeController> {
                   ],
                 ),
                 SizedBox(
-                  height: 40,
+                  height: 25,
                 ),
-                Align(
-                  alignment: Alignment.bottomLeft,
-                  child: Text(
-                    "Riwayat presensi",
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                  ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "Riwayat presensi",
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    ),
+                    TextButton(
+                      onPressed: () {},
+                      child: Text("Lihat semua..."),
+                    ),
+                  ],
                 ),
                 SizedBox(
                   height: 20,
@@ -169,6 +180,7 @@ class HomeView extends GetView<HomeController> {
                     borderRadius: BorderRadius.circular(15),
                   ),
                   child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Column(
                         children: [
@@ -180,131 +192,17 @@ class HomeView extends GetView<HomeController> {
                           ),
                         ],
                       ),
-                      SizedBox(
-                        width: 30,
-                      ),
-                      Row(
-                        children: [
-                          Column(
-                            children: [
-                              Text("check out"),
-                              Text(
-                                ".. : .. ..",
-                                style: TextStyle(
-                                    fontSize: 15, fontWeight: FontWeight.bold),
-                              ),
-                            ],
-                          ),
-                          SizedBox(
-                            width: 30,
-                          ),
-                          Column(
-                            children: [
-                              Text("Jumat, 9 Juni 2024"),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                Container(
-                  padding: EdgeInsets.all(15),
-                  decoration: BoxDecoration(
-                    border: Border.all(color: Colors.grey),
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  child: Row(
-                    children: [
                       Column(
                         children: [
-                          Text("check in"),
+                          Text("check out"),
                           Text(
-                            "3:18 PM",
+                            ".. : .. ..",
                             style: TextStyle(
                                 fontSize: 15, fontWeight: FontWeight.bold),
                           ),
                         ],
                       ),
-                      SizedBox(
-                        width: 30,
-                      ),
-                      Row(
-                        children: [
-                          Column(
-                            children: [
-                              Text("check out"),
-                              Text(
-                                "3:21 PM",
-                                style: TextStyle(
-                                    fontSize: 15, fontWeight: FontWeight.bold),
-                              ),
-                            ],
-                          ),
-                          SizedBox(
-                            width: 30,
-                          ),
-                          Column(
-                            children: [
-                              Text("Senin, 5 Juni 2024"),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                Container(
-                  padding: EdgeInsets.all(15),
-                  decoration: BoxDecoration(
-                    border: Border.all(color: Colors.grey),
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  child: Row(
-                    children: [
-                      Column(
-                        children: [
-                          Text("check in"),
-                          Text(
-                            "11:55 AM",
-                            style: TextStyle(
-                                fontSize: 15, fontWeight: FontWeight.bold),
-                          ),
-                        ],
-                      ),
-                      SizedBox(
-                        width: 30,
-                      ),
-                      Row(
-                        children: [
-                          Column(
-                            children: [
-                              Text("check out"),
-                              Text(
-                                "11:56 AM",
-                                style: TextStyle(
-                                    fontSize: 15, fontWeight: FontWeight.bold),
-                              ),
-                            ],
-                          ),
-                          SizedBox(
-                            width: 30,
-                          ),
-                          Column(
-                            children: [
-                              Text("Senin, 20 mei 2024"),
-                            ],
-                          ),
-                        ],
-                      ),
+                      Text("Jumat, 9 Juni 2024"),
                     ],
                   ),
                 ),
