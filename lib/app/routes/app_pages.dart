@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 
+import '../modules/all_presence/bindings/all_presence_binding.dart';
+import '../modules/all_presence/views/all_presence_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/signin/bindings/signin_binding.dart';
@@ -36,6 +38,11 @@ class AppPages {
       name: _Paths.SIGNUP,
       page: () => const SignupView(),
       binding: SignupBinding(),
+    ),
+    GetPage(
+      name: _Paths.ALL_PRESENCE,
+      page: () => const AllPresenceView(),
+      binding: AllPresenceBinding(),
     ),
   ];
 }
