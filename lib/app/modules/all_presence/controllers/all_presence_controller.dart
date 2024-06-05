@@ -1,23 +1,22 @@
 import 'package:get/get.dart';
 
 class AllPresenceController extends GetxController {
-  //TODO: Implement AllPresenceController
-
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
-  }
-
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {
-    super.onClose();
-  }
-
-  void increment() => count.value++;
+  //variable
+  List<Map<String, dynamic>> data = [
+    {
+      "waktuMasuk": "07.00",
+      "waktuKeluar": "15.00",
+      "tanggal": "Jumat, 9 Juni 2024",
+    },
+    {
+      "waktuMasuk": "07.00",
+      "waktuKeluar": "16.00",
+      "tanggal": "Sabtu, 10 Juni 2024",
+    },
+    {
+      "waktuMasuk": "06.50",
+      "waktuKeluar": "15.20",
+      "tanggal": "Senin, 12 Juni 2024",
+    },
+  ];
 }

@@ -5,9 +5,11 @@ import 'package:get/get.dart';
 import '../controllers/all_presence_controller.dart';
 
 class AllPresenceView extends GetView<AllPresenceController> {
-  const AllPresenceView({Key? key}) : super(key: key);
+  const AllPresenceView({super.key});
   @override
   Widget build(BuildContext context) {
+    print(controller.data);
+    var data = controller.data;
     return Scaffold(
       appBar: AppBar(
         title: const Text(
@@ -29,14 +31,14 @@ class AllPresenceView extends GetView<AllPresenceController> {
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(15),
               ),
-              child: const Row(
+              child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Column(
                     children: [
                       Text("check in"),
                       Text(
-                        "12:37 PM",
+                        data[index]['waktuMasuk'],
                         style: TextStyle(
                             fontSize: 15, fontWeight: FontWeight.bold),
                       ),
@@ -46,7 +48,7 @@ class AllPresenceView extends GetView<AllPresenceController> {
                     children: [
                       Text("check out"),
                       Text(
-                        ".. : .. ..",
+                        data[index]['waktuKeluar'],
                         style: TextStyle(
                             fontSize: 15, fontWeight: FontWeight.bold),
                       ),
@@ -62,7 +64,7 @@ class AllPresenceView extends GetView<AllPresenceController> {
               height: 15,
             );
           },
-          itemCount: 5,
+          itemCount: data.length,
         ),
       ),
     );
