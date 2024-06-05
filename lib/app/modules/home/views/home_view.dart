@@ -5,7 +5,7 @@ import 'package:presensi/app/routes/app_pages.dart';
 import '../controllers/home_controller.dart';
 
 class HomeView extends GetView<HomeController> {
-  const HomeView({Key? key}) : super(key: key);
+  const HomeView({super.key});
   @override
   Widget build(BuildContext context) {
     var formkey = GlobalKey<FormState>();
@@ -21,10 +21,10 @@ class HomeView extends GetView<HomeController> {
                     CircleAvatar(
                       child: Image.asset("assets/foto/profile.jpg"),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 15,
                     ),
-                    Column(
+                    const Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text("Selamat datang"),
@@ -37,11 +37,11 @@ class HomeView extends GetView<HomeController> {
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 30,
                 ),
                 Container(
-                  padding: EdgeInsets.all(15),
+                  padding: const EdgeInsets.all(15),
                   decoration: BoxDecoration(
                     color: Colors.blue.shade800,
                     borderRadius: BorderRadius.circular(15),
@@ -49,23 +49,24 @@ class HomeView extends GetView<HomeController> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text("Sistem Informasi"),
-                      Text(
+                      const Text("Sistem Informasi"),
+                      const Text(
                         "212231012",
                         style: TextStyle(
                             fontSize: 19, fontWeight: FontWeight.bold),
                       ),
-                      Text("Universitas Nahdlatul Ulama Al Ghazali Cilacap"),
-                      SizedBox(
+                      const Text(
+                          "Universitas Nahdlatul Ulama Al Ghazali Cilacap"),
+                      const SizedBox(
                         height: 20,
                       ),
                       Container(
-                        padding: EdgeInsets.all(15),
+                        padding: const EdgeInsets.all(15),
                         decoration: BoxDecoration(
                           color: Colors.blue.shade200,
                           borderRadius: BorderRadius.circular(15),
                         ),
-                        child: Row(
+                        child: const Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             Column(
@@ -104,19 +105,19 @@ class HomeView extends GetView<HomeController> {
                     ],
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 15,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Container(
-                      padding: EdgeInsets.all(15),
+                      padding: const EdgeInsets.all(15),
                       decoration: BoxDecoration(
                         color: Colors.blue.shade50,
                         borderRadius: BorderRadius.circular(15),
                       ),
-                      child: Row(
+                      child: const Row(
                         children: [
                           Column(
                             children: [
@@ -132,12 +133,12 @@ class HomeView extends GetView<HomeController> {
                       ),
                     ),
                     Container(
-                      padding: EdgeInsets.all(15),
+                      padding: const EdgeInsets.all(15),
                       decoration: BoxDecoration(
                         color: Colors.blue.shade50,
                         borderRadius: BorderRadius.circular(15),
                       ),
-                      child: Row(
+                      child: const Row(
                         children: [
                           Column(
                             children: [
@@ -154,13 +155,13 @@ class HomeView extends GetView<HomeController> {
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 25,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(
+                    const Text(
                       "Riwayat presensi",
                       style:
                           TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
@@ -170,21 +171,21 @@ class HomeView extends GetView<HomeController> {
                         Get.toNamed(Routes.ALL_PRESENCE);
                         if (formkey.currentState!.validate()) {}
                       },
-                      child: Text("Lihat semua..."),
+                      child: const Text("Lihat semua..."),
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 Container(
-                  padding: EdgeInsets.all(15),
+                  padding: const EdgeInsets.all(15),
                   decoration: BoxDecoration(
                     border: Border.all(color: Colors.grey),
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(15),
                   ),
-                  child: Row(
+                  child: const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Column(

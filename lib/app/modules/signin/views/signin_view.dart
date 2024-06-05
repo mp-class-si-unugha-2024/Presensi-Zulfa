@@ -5,7 +5,7 @@ import 'package:presensi/app/routes/app_pages.dart';
 import '../controllers/signin_controller.dart';
 
 class SigninView extends GetView<SigninController> {
-  const SigninView({Key? key}) : super(key: key);
+  const SigninView({super.key});
   @override
   Widget build(BuildContext context) {
     var formkey = GlobalKey<FormState>();
@@ -17,19 +17,19 @@ class SigninView extends GetView<SigninController> {
             key: formkey,
             child: Column(
               children: [
-                Text(
+                const Text(
                   "Presensi",
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                 ),
-                SizedBox(height: 15),
-                Align(
+                const SizedBox(height: 15),
+                const Align(
                   alignment: Alignment.bottomLeft,
                   child: Text(
                     "Sign in",
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                   ),
                 ),
-                SizedBox(height: 15),
+                const SizedBox(height: 15),
                 TextFormField(
                   validator: (value) {
                     if (value!.isEmpty) {
@@ -40,12 +40,12 @@ class SigninView extends GetView<SigninController> {
                     }
                     return null;
                   },
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     labelText: "Email",
                     border: OutlineInputBorder(),
                   ),
                 ),
-                SizedBox(height: 15),
+                const SizedBox(height: 15),
                 TextFormField(
                   validator: (value) {
                     if (value!.isEmpty) {
@@ -56,7 +56,7 @@ class SigninView extends GetView<SigninController> {
                     }
                     return null;
                   },
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     labelText: "Password",
                     border: OutlineInputBorder(),
                   ),
@@ -67,18 +67,21 @@ class SigninView extends GetView<SigninController> {
                       value: true,
                       onChanged: (value) {},
                     ),
-                    Text("Show password"),
+                    const Text("Show password"),
                   ],
                 ),
                 Row(
                   children: [
-                    Text("Lupa kata sandi"),
+                    const Text("Lupa kata sandi"),
+                    SizedBox(
+                      width: 50,
+                    ),
                     ElevatedButton(
                       onPressed: () {
                         Get.toNamed(Routes.HOME);
                         if (formkey.currentState!.validate()) {}
                       },
-                      child: Text("Masuk"),
+                      child: const Text("Masuk"),
                     ),
                   ],
                 ),

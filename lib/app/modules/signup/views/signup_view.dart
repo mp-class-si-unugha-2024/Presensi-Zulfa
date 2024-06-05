@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import '../controllers/signup_controller.dart';
 
 class SignupView extends GetView<SignupController> {
-  const SignupView({Key? key}) : super(key: key);
+  const SignupView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -24,123 +24,119 @@ class SignupView extends GetView<SignupController> {
           child: Card(
             child: Form(
               key: formkey,
-              child: Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    Text(
-                      "REGISTRASI",
-                      style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                      textAlign: TextAlign.center,
+              child: ListView(
+                // crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  const Text(
+                    "REGISTRASI",
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    textAlign: TextAlign.center,
+                  ),
+                  const SizedBox(height: 15),
+                  TextFormField(
+                    decoration: const InputDecoration(
+                      labelText: "Nama",
+                      border: OutlineInputBorder(),
                     ),
-                    SizedBox(height: 15),
-                    TextFormField(
-                      decoration: InputDecoration(
-                        labelText: "Nama",
-                        border: OutlineInputBorder(),
-                      ),
+                  ),
+                  const SizedBox(height: 15),
+                  TextFormField(
+                    decoration: const InputDecoration(
+                      labelText: "NIM",
+                      border: OutlineInputBorder(),
                     ),
-                    SizedBox(height: 15),
-                    TextFormField(
-                      decoration: InputDecoration(
-                        labelText: "NIM",
-                        border: OutlineInputBorder(),
-                      ),
+                  ),
+                  const SizedBox(height: 15),
+                  TextFormField(
+                    decoration: const InputDecoration(
+                      labelText: "Semester",
+                      border: OutlineInputBorder(),
                     ),
-                    SizedBox(height: 15),
-                    TextFormField(
-                      decoration: InputDecoration(
-                        labelText: "Semester",
-                        border: OutlineInputBorder(),
-                      ),
-                    ),
-                    SizedBox(height: 15),
-                    Obx(() => DropdownButtonFormField<String>(
-                          decoration: InputDecoration(
-                            labelText: "Pilih Prodi",
-                            border: OutlineInputBorder(),
-                          ),
-                          value: selectedProdi.value.isEmpty
-                              ? null
-                              : selectedProdi.value,
-                          onChanged: (String? newValue) {
-                            if (newValue != null) {
-                              selectedProdi.value = newValue;
-                            }
-                          },
-                          items: prodiList
-                              .map<DropdownMenuItem<String>>((String value) {
-                            return DropdownMenuItem<String>(
-                              value: value,
-                              child: Text(value),
-                            );
-                          }).toList(),
-                        )),
-                    SizedBox(height: 15),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        ElevatedButton.icon(
-                          icon: Icon(Icons.male),
-                          label: Text('Laki-laki'),
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.blue,
-                          ),
-                          onPressed: () {},
+                  ),
+                  const SizedBox(height: 15),
+                  Obx(() => DropdownButtonFormField<String>(
+                        decoration: const InputDecoration(
+                          labelText: "Pilih Prodi",
+                          border: OutlineInputBorder(),
                         ),
-                        ElevatedButton.icon(
-                          icon: Icon(Icons.female),
-                          label: Text('Perempuan'),
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.blue.shade50,
-                          ),
-                          onPressed: () {},
+                        value: selectedProdi.value.isEmpty
+                            ? null
+                            : selectedProdi.value,
+                        onChanged: (String? newValue) {
+                          if (newValue != null) {
+                            selectedProdi.value = newValue;
+                          }
+                        },
+                        items: prodiList
+                            .map<DropdownMenuItem<String>>((String value) {
+                          return DropdownMenuItem<String>(
+                            value: value,
+                            child: Text(value),
+                          );
+                        }).toList(),
+                      )),
+                  const SizedBox(height: 15),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      ElevatedButton.icon(
+                        icon: const Icon(Icons.male),
+                        label: const Text('Laki-laki'),
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.blue,
                         ),
-                      ],
-                    ),
-                    SizedBox(height: 15),
-                    TextFormField(
-                      decoration: InputDecoration(
-                        labelText: "Alamat PKL",
-                        border: OutlineInputBorder(),
+                        onPressed: () {},
                       ),
-                    ),
-                    SizedBox(height: 15),
-                    TextFormField(
-                      decoration: InputDecoration(
-                        labelText: "Nomor WhatsApp",
-                        border: OutlineInputBorder(),
+                      ElevatedButton.icon(
+                        icon: const Icon(Icons.female),
+                        label: const Text('Perempuan'),
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.blue.shade50,
+                        ),
+                        onPressed: () {},
                       ),
+                    ],
+                  ),
+                  const SizedBox(height: 15),
+                  TextFormField(
+                    decoration: const InputDecoration(
+                      labelText: "Alamat PKL",
+                      border: OutlineInputBorder(),
                     ),
-                    SizedBox(height: 15),
-                    TextFormField(
-                      decoration: InputDecoration(
-                        labelText: "Email",
-                        border: OutlineInputBorder(),
-                      ),
+                  ),
+                  const SizedBox(height: 15),
+                  TextFormField(
+                    decoration: const InputDecoration(
+                      labelText: "Nomor WhatsApp",
+                      border: OutlineInputBorder(),
                     ),
-                    SizedBox(height: 15),
-                    Obx(() => TextFormField(
-                          obscureText: isObscure.value,
-                          decoration: InputDecoration(
-                            labelText: "Password",
-                            border: OutlineInputBorder(),
-                            suffixIcon: IconButton(
-                              icon: Icon(
-                                isObscure.value
-                                    ? Icons.visibility
-                                    : Icons.visibility_off,
-                              ),
-                              onPressed: () {
-                                isObscure.value = !isObscure.value;
-                              },
+                  ),
+                  const SizedBox(height: 15),
+                  TextFormField(
+                    decoration: const InputDecoration(
+                      labelText: "Email",
+                      border: OutlineInputBorder(),
+                    ),
+                  ),
+                  const SizedBox(height: 15),
+                  Obx(() => TextFormField(
+                        obscureText: isObscure.value,
+                        decoration: InputDecoration(
+                          labelText: "Password",
+                          border: const OutlineInputBorder(),
+                          suffixIcon: IconButton(
+                            icon: Icon(
+                              isObscure.value
+                                  ? Icons.visibility
+                                  : Icons.visibility_off,
                             ),
+                            onPressed: () {
+                              isObscure.value = !isObscure.value;
+                            },
                           ),
-                        )),
-                  ],
-                ),
+                        ),
+                      )),
+                ],
               ),
             ),
           ),
